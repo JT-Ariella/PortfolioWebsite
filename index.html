@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Confidential</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="myscripts.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="stamp">New Arrival</div>
+        <div class="header">
+            <b>Profile</b>
+        </div>
+        <div class="profile">
+            <div class="photo">
+                <img src="profile pic.jpg" alt="Profile Photo">
+                <div class="dark-mode-toggle">
+                    <button id="darkModeToggle">C</button>
+                </div>
+            </div>
+            <div>
+                <h1><u>Janna Ariella Tabilog</u></h1>
+                <h2>Birth</h2>
+                <p>06-04-2004</p>
+                <h2>Skills</h2>
+                <p>Front-End Developer, Illustrator, Graphic Designer</p>
+            </div>
+        </div>
+
+        <div class="info">
+            <h2>Contact</h2>
+            <p>+639<span class="redacted" data-text="Redacted">[Redacted]</span></p>
+            <p>Facebook: <a href="https://www.facebook.com/janna.tabilog">Janna Tabilog</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/ariella_jt/">ariella_jt</a></p>
+            <p>Mail: jannaariela@gmail.com</p>
+        </div>
+
+        <div class="footer">
+            <p><a href="projects.html">View Projects</a> | <a href="AboutMe.html">About Me</a></p>
+        </div>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Load saved mode from localStorage
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+
+        // Toggle dark mode on button click
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+</body>
+</html>

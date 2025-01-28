@@ -1,0 +1,333 @@
+body {
+    font-family: 'Courier New', Courier, monospace; /* Typewriter vibes */
+    background-color: #ccc7bf;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/*-----------DARK MODE-----------*/
+body.dark-mode {
+    background-color: #121212;
+    color: lawngreen;
+    
+}
+
+button#darkModeToggle {
+    margin-top: 2px;
+    width: 40px;
+    height: 40px;
+    background-color: #121212;
+    color:#ccc7bf;
+    border-color: #000;
+    border-radius: 15%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    
+}
+
+button#darkModeToggle:hover {
+    background-color: #7cfc00;
+    color: #121212;
+    transform: scale(1.1);
+    animation: flicker 0.3s infinite alternate;
+    color:#121212;
+}
+
+body.dark-mode button#darkModeToggle {
+    background-color: #121212;
+    color: #7cfc00;
+    border: 2px solid #7cfc00;
+}
+
+body.dark-mode .container{
+    border: 2px solid #7cfc00;
+    background: #121212;
+    box-shadow: none;
+
+}
+
+body.dark-mode .redacted {
+    background: #7cfc00;
+    color: #7cfc00;
+    position: relative;
+    display: inline-block;
+    animation: glitch-effect 0.01s infinite;
+}
+
+body.darkmode .redacted::before, body.darkmode::after{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #7cfc00;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 60%);
+}
+
+body.dark-mode .redacted::after{
+    clip-path: polygon(0 60%, 100% 40%, 100% 100%, 0 100%);
+    animation-delay: 2s;
+    animation: glitch-effect 2s infinite;
+}
+
+@keyframes glitch-effect {
+    0% {
+      transform: translate(0);
+    }
+    33% {
+      transform: translate(5px, 0px);
+    }
+    66% {
+      transform: translate(0px, 5px);
+    }
+    100% {
+      transform: translate(0);
+    }
+}
+
+body.dark-mode a {
+    color:blue;
+}
+
+body.dark-mode .photo {
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    border: 2px solid #7cfc00;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: inherit;
+}
+
+body.dark-mode .photo img {
+    padding: 13px;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+
+body.dark-mode .header {
+    background-color: transparent;
+    border: 2px solid #7cfc00;
+    color: #7cfc00;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+@keyframes flicker {
+    0%, 100%{ opacity:1}
+    50% {opacity: 0.5}
+    
+}
+
+body.dark-mode .stamp {
+    position: absolute;
+    top: 16%;
+    left: 35%;
+    transform: rotate(0deg);
+    color: #7cfc00;
+    font-size: 24px;
+    font-weight: bold;
+    border: 3px solid #7cfc00;
+    padding: 10px;
+    text-transform: uppercase;
+    background: transparent;
+    animation: flicker 0.08s infinite alternate;
+    color:#7cfc00;
+}
+
+body.dark-mode .profile h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px; 
+    margin-top: 80px;
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    color: #7cfc00;
+}
+.glitch {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  color: #7cfc00;
+}
+
+/*-------------DARK MODE-------------*/
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: relative;
+}
+
+.stamp {
+    position: absolute;
+    top: 55%;
+    left: 15%;
+    transform: rotate(-10deg);
+    color: #c00;
+    font-size: 24px;
+    font-weight: bold;
+    border: 3px solid #c00;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+}
+
+.header {
+    background-color: black;
+    color: #f4f4f4;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.profile h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.profile h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.profile p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.photo {
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    border: 4px solid #000;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: inherit;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 4%;
+    right: 5%;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+.info h2 {
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.info p {
+    margin: 5px 0;
+}
+
+a {
+    color: darkred;
+}
+
+.redacted {
+    background: #000;
+    color: #000;
+    display: inline-block;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer a {
+    color: darkred;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile view */
+@media (max-width: 765px) {
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .stamp {
+        position: absolute;
+        top: 37%;
+        left: 40%;
+        margin-bottom: 10px;
+        background: transparent;
+    }
+
+    .photo {
+        margin: 0 0 15px 0;
+    }
+
+    .dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 6%;
+    }
+    /*dark mobile-view*/
+    body.dark-mode .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    body.dark-mode .stamp {
+        top: 41%;
+        left: 26%;
+    }
+
+    body.dark-mode .photo {
+        margin-bottom: 15px;
+    }
+
+    body.dark-mode .dark-mode-toggle {
+        top: 23px;
+        right: 7%;
+    }
+}
