@@ -82,11 +82,11 @@ body.dark-mode .redacted::after{
     }
     100% {
       transform: translate(0);
-    }*/
-}
+    }
+}*/
 
 body.dark-mode a {
-    color:blue;
+    color:whitesmoke;
 }
 
 body.dark-mode .photo {
