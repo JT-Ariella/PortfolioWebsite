@@ -47,7 +47,7 @@ body.dark-mode .container{
 
 }
 
-body.dark-mode .redacted {
+/*body.dark-mode .redacted {
     background: #7cfc00;
     color: #7cfc00;
     position: relative;
@@ -68,7 +68,7 @@ body.dark-mode .redacted::after{
     clip-path: polygon(0 60%, 100% 40%, 100% 100%, 0 100%);
     animation-delay: 2s;
     animation: glitch-effect 2s infinite;
-}
+}*/
 
 @keyframes glitch-effect {
     0% {
