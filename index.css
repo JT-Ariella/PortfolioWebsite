@@ -68,7 +68,7 @@ body.dark-mode .redacted::after{
     clip-path: polygon(0 60%, 100% 40%, 100% 100%, 0 100%);
     animation-delay: 2s;
     animation: glitch-effect 2s infinite;
-}*/
+}
 
 @keyframes glitch-effect {
     0% {
@@ -82,7 +82,7 @@ body.dark-mode .redacted::after{
     }
     100% {
       transform: translate(0);
-    }
+    }*/
 }
 
 body.dark-mode a {
